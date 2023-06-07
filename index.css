@@ -1,0 +1,54 @@
+
+    body {
+        background-image: url("/Images/Background.jpeg");
+        background-size: cover;
+        /* background-position: center; */
+        background-repeat: no-repeat;
+      
+}
+header h1{
+        text-align: center;
+        margin-top:40px;
+        font-size: 45px;
+}
+.input-info{
+        /* border: 2px solid black; */
+        width: 50vw;
+        height: 30vh;
+        margin-left: 25%;
+        margin-top: 1%;
+}
+.firstBox{
+    display: block;
+}
+.firstBox input ,label{
+    margin-left: 35px;
+    margin-top: 20px;
+}
+.secondBox{
+    margin-top: 20px;
+    display: block;
+}
+.secondBox input,label{
+    margin-left: 30px;
+}
+
+.MiddleBorder{
+    width: 100%;
+    height: 40px;
+    background-color: #1c3f3A;
+    opacity: .9;
+}
+
+#Calculate-BTN{
+    height: 40px;
+    margin-left: 45%;
+    width: 190px;
+    background-color: #1c3f3A;
+    border-radius:20px;
+}
+.FinalBorder{
+    width: 100%;
+    height: 40px;
+    background-color: #1c3f3A;
+}

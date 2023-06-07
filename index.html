@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Health Care System</title>
+</head>
+
+<body>
+    <header>
+        <h1>Fitness Tracker</h1>
+    </header>   
+    
+    <div class="input-info">
+            <div class="firstBox">
+        <label for="Input_Box">Age</label>
+        <input type="number" name="numberInput" id="Input_Box">
+
+        <label for="MaleRadio">Male</label>
+        <input type="radio" id="MaleRadio" name="gender" value="male">
+
+        <label for="FemaleRadio">Female</label>
+        <input type="radio" name="gender" value="female" id="FemaleRadio">
+                
+    </div>
+
+        <div class="secondBox">
+        <label for="HeightInput">Height (cm):</label>
+        <input type="number" id="HeightInput">
+        
+        <label for="WeightInput">Weight (kg):</label>
+        <input type="number" id="WeightInput">
+    </div>
+    </div>
+
+    <div class="MiddleBorder">
+        <button id="Calculate-BTN"  onclick="Calculate()">Calculate</button>
+    </div>
+
+    <div class="MainPage">
+        <h1>BMI: <span id="BMI"></span></h1>
+        <h1>Body Fat:<span id="BodyFat"></span></h1>
+        <h1>Lean Body Mass: <span id="LBM"></span></h1>
+        <h1>Body Water: <span id="BodyWater"></span></h1>
+        <h1>BMR: <span id="BMR"></span></h1>
+        <h1>MuscleRate: <span id="MuscleRate"></span></h1>
+        <h1>MuscleMass: <span id="MuscleMass"></span></h1>
+        <h1>BoneMass: <span id="BoneMass"></span></h1>
+    </div>
+    <div class="FinalBorder">
+        
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
