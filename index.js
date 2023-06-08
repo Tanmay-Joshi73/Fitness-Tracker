@@ -16,11 +16,20 @@ let BF
 let BMR
 let LBM_Value
 let MuscleMass_Value
+let bodyFat
 // let value
 // let value1
 // let value2
          const Calculate=()=>{
              age = parseInt(AgeValue.value, 10);
+                        //For Checking the age range
+             if (!AgeValue.validity.valid) {
+                alert('Input value must be between 0 and 100.')
+                    return
+            }
+              
+
+
           
               if(MaleRadio.checked) Gender=0 ,value=0.407,value1=0.267,value2=19.2
               else if(FemaleRadio.checked) Gender=1, value=0.252,value1=0.473,value2=48.3
@@ -40,7 +49,11 @@ let MuscleMass_Value
              const height = (parseFloat(HeightValue.value)/100); // height in meters
         
               BMI = weight / (height * height);
-             BMI_Value.innerText=`${BMI.toFixed(2)}`
+                if(!isNaN(BMI))  BMI_Value.innerText=`${BMI.toFixed(2)}`
+
+                
+
+            
     }
         
 
@@ -48,6 +61,7 @@ let MuscleMass_Value
         const BodyFat=()=>{
             
             const bmi = parseFloat(BMI);
+            if(!isNaN(bmi)){
             //At reserach Paper Value Assined for a men =0  but if we use men =0 calculation goes wrong
                 // const GenderMale=1
              if (Gender === 0) {
@@ -58,6 +72,7 @@ let MuscleMass_Value
              }
             BodyFatValue.innerText=`${bodyFat.toFixed(2)}`   
      }
+    }
 
 
          const LBM=()=>{
@@ -109,6 +124,7 @@ let MuscleMass_Value
         
 
         Calculate();
+
 
 
 
