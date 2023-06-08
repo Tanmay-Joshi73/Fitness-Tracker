@@ -20,28 +20,39 @@ let bodyFat
 // let value
 // let value1
 // let value2
-         const Calculate=()=>{
-             age = parseInt(AgeValue.value, 10);
-                        //For Checking the age range
-             if (!AgeValue.validity.valid) {
-                alert('Input value must be between 0 and 100.')
-                    return
-            }
-              
-
-
-          
-              if(MaleRadio.checked) Gender=0 ,value=0.407,value1=0.267,value2=19.2
-              else if(FemaleRadio.checked) Gender=1, value=0.252,value1=0.473,value2=48.3
-             
-              BMI_Calculation()  
-              BodyFat()
-              LBM()
-              BodyWater()
-              BMRCalculation()
-              MuscleMassCalculation()
-            
-    }   
+const Calculate =  () => {
+    age = parseInt(AgeValue.value, 10);
+  
+    // For checking the age range
+    if (!AgeValue.validity.valid) {
+      alert('Input value must be between 0 and 100.');
+      return;
+    }
+  
+    if (MaleRadio.checked) {
+      Gender = 0;
+      value = 0.407;
+      value1 = 0.267;
+      value2 = 19.2;
+    } else if (FemaleRadio.checked) {
+      Gender = 1;
+      value = 0.252;
+      value1 = 0.473;
+      value2 = 48.3;
+    }
+  
+    const functions = [
+        BMI_Calculation,
+        BodyFat,
+        LBM,
+        BodyWater,
+        BMRCalculation,
+        MuscleMassCalculation,
+      ];
+    
+      functions.forEach((func) => func());
+    ;
+  }; 
 
 
          const BMI_Calculation=()=>{
@@ -121,9 +132,13 @@ let bodyFat
           
            
 
-        
+         
 
         Calculate();
+
+
+
+
 
 
 
