@@ -1,27 +1,28 @@
-
+/*
+        //My Css 
     body {
         background-image: url("/Images/Background.jpeg");
         background-size: cover;
         /* background-position: center; */
-        background-repeat: no-repeat;
+        /* background-repeat: no-repeat; */
       
-}
-header h1{
-        text-align: center;
+/* } */
+/* header h1{ */
+        /* text-align: center;
         margin-top:40px;
         font-size: 45px;
 }
 .input-info{
         /* border: 2px solid black; */
-        width: 50vw;
+        /* width: 50vw;
         height: 30vh;
-        margin-left: 25%;
-        margin-top: 1%;
-}
-.firstBox{
-    display: block;
-}
-.firstBox input ,label{
+        margin-left: 25%; */
+        /* margin-top: 1%; */
+/* } */
+/* .firstBox{ */
+    /* display: block; */
+/* } */ 
+/* .firstBox input ,label{
     margin-left: 35px;
     margin-top: 20px;
 }
@@ -31,10 +32,10 @@ header h1{
 }
 .secondBox input,label{
     margin-left: 30px;
-}
+} */
 
-.MiddleBorder{
-    width: 100%;
+/* .MiddleBorder{ */
+    /* width: 100%;
     height: 40px;
     background-color: #1c3f3A;
     opacity: .9;
@@ -45,10 +46,138 @@ header h1{
     margin-left: 45%;
     width: 190px;
     background-color: #1c3f3A;
-    border-radius:20px;
-}
+    border-radius:20px; */
+/* }
 .FinalBorder{
     width: 100%;
     height: 40px;
     background-color: #1c3f3A;
-}
+} */
+
+
+/* Reset default styles */
+
+
+
+
+
+
+  /* Chat Gpt code */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+
+
+
+ 
+  /* Set body background and font styles */
+  body {
+    
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: black;
+    font-size: 28px;
+    margin: 0;
+  }
+  
+  /* Input container styles */
+  .input-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .firstBox,
+  .secondBox {
+    flex-basis: 45%;
+  }
+  
+  /* Input label styles */
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Input field styles */
+  input[type="number"],
+  input[type="radio"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  /* Middle border styles */
+  .MiddleBorder {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Calculate button styles */
+  #Calculate-BTN {
+    background-color: #333;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #Calculate-BTN:hover {
+    background-color: #555;
+  }
+  
+  /* Main page styles */
+  .MainPage {
+    text-align: center;
+    margin: 0 20px;
+  }
+  
+  .MainPage h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .MainPage span {
+    font-weight: bold;
+  }
+  
+  /* Final border styles */
+  .FinalBorder {
+    border-top: 2px solid #ccc;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  p {
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+  }
+  
