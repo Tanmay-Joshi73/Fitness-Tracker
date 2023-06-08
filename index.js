@@ -49,9 +49,13 @@ let MuscleMass_Value
             
             const bmi = parseFloat(BMI);
             //At reserach Paper Value Assined for a men =0  but if we use men =0 calculation goes wrong
-                const GenderMale=1
-           const bodyFat = -44.988 + (0.503 * age) + (10.689 * GenderMale) + (3.172 * bmi) - (0.026 * (bmi * bmi)) + (0.181 * bmi * GenderMale) - (0.02 * bmi * age) - (0.005 * (bmi * bmi) * GenderMale) + (0.00021 * (bmi * bmi) * age);           
-           
+                // const GenderMale=1
+             if (Gender === 0) {
+            bodyFat = -44.988 + (0.503 * age) + (10.689 * 1) + (3.172 * bmi) - (0.026 * (bmi * bmi)) + (0.181 * bmi * 1) - (0.02 * bmi * age) - (0.005 * (bmi * bmi) * 1) + (0.00021 * (bmi * bmi) * age);           
+             }
+             else{
+                bodyFat = -44.988 + (0.503 * age) + (10.689 * 0) + (3.172 * bmi) - (0.026 * (bmi * bmi)) + (0.181 * bmi * 0) - (0.02 * bmi * age) - (0.005 * (bmi * bmi) * 0) + (0.00021 * (bmi * bmi) * age);           
+             }
             BodyFatValue.innerText=`${bodyFat.toFixed(2)}`   
      }
 
