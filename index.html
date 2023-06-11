@@ -11,28 +11,46 @@
 <body>
     <header>
         <h1>Fitness Tracker</h1>
-    </header>   
+    </header>
+    
+    
     
     <div class="input-info">
-            <div class="firstBox">
-        <label for="Input_Box">Age</label>
-        <input type="number" name="numberInput" id="Input_Box" min="0" max="100">
+        
+        <div class="zerothBox">
+            <label for="NameInput">Name &nbsp;: </label>
+            <input type="text">
+        </div>
 
-        <label for="MaleRadio">Male</label>
-        <input type="radio" id="MaleRadio" name="gender" value="male">
+        <div class="firstBox">
 
-        <label for="FemaleRadio">Female</label>
-        <input type="radio" name="gender" value="female" id="FemaleRadio">
-                
-    </div>
+            <div class="age">
+                <label for="Input_Box">Age &nbsp;: </label>
+                <input type="number" name="numberInput" id="Input_Box" min="0" max="100">
+            </div>
+            
+            <div class="Radios">
+                <label for="MaleRadio">Male</label>
+                <input type="radio" id="MaleRadio" name="gender" value="male">
+
+                <label for="FemaleRadio">&nbsp; Female</label>
+                <input type="radio" name="gender" value="female" id="FemaleRadio">
+            </div>
+        </div>
+    
 
         <div class="secondBox">
-        <label for="HeightInput">Height (cm):</label>
-        <input type="number" id="HeightInput">
-        
-        <label for="WeightInput">Weight (kg):</label>
-        <input type="number" id="WeightInput">
-    </div>
+            <div class="height">
+                <label for="HeightInput">Height (cm) &nbsp;: </label>
+                <input type="number" id="HeightInput">
+            </div>
+
+            <div class="weight">
+                <label for="WeightInput">Weight (kg) &nbsp;: </label>
+                <input type="number" id="WeightInput">
+            </div>
+        </div>
+
     </div>
 
     <div class="MiddleBorder">
@@ -40,21 +58,48 @@
     </div>
 
     <div class="MainPage">
-        <h1>BMI: <span id="BMI"></span></h1>
-        <h1>Body Fat:<span id="BodyFat"></span></h1>
-        <h1>Lean Body Mass: <span id="LBM"></span></h1>
-        <h1>Body Water: <span id="BodyWater"></span></h1>
-        <h1>BMR: <span id="BMR"></span></h1>
-        <h1>MuscleRate: <span id="MuscleRate"></span></h1>
-        <h1>MuscleMass: <span id="MuscleMass"></span></h1>
-        <h1>BoneMass: <span id="BoneMass"></span></h1>
+        <div class="row1">
+            <h2>BMI: <span id="BMI"></span></h2>
+            <h2>Body Fat:<span id="BodyFat"></span></h2>
+            <h2>Lean Body Mass: <span id="LBM"></span></h2>
+        </div>
+
+        <div class="row2">
+            <h2>Body Water: <span id="BodyWater"></span></h2>
+            <h2>BMR: <span id="BMR"></span></h2>
+            <h2>MuscleRate: <span id="MuscleRate"></span></h2>
+        </div>
+
+        <div class="row3">
+            <h2>MuscleMass: <span id="MuscleMass"></span></h2>
+            <h2>BoneMass: <span id="BoneMass"></span></h2>
+        </div>
     </div>
-    <div class="FinalBorder">
-        
+
+    <div class="FinalBorder"></div>
+
+    <div class="dots">
+        <div class="green">
+            <span class="dot"></span>
+            <p>&nbsp; Normal</p>
+        </div>
+
+        <div class="yellow">
+            <span class="dot"></span>
+            <p>&nbsp; Moderate</p>
+        </div>
+
+        <div class="red">
+            <span class="dot"></span>
+            <p>&nbsp; Bad</p>
+        </div>
     </div>
-      <footer>
+
+    <footer>
+        <div></div>
         <p>Copyright &copy; 2023 Health Care System</p>
     </footer>
+
 <script src="index.js"></script>
 </body>
 </html>

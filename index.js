@@ -48,6 +48,7 @@ const Calculate =  () => {
         BodyWater,
         BMRCalculation,
         MuscleMassCalculation,
+        BoneMassCalculation
       ];
     
       functions.forEach((func) => func());
@@ -127,6 +128,10 @@ const Calculate =  () => {
                 MuscleMass_Value= 0.567 * WeightValue.value - 0.037 * age + 0.046 * HeightValue.value + 6.1 * 0 - 1.91   
             }
                 MuscleMass.innerText=`${MuscleMass_Value.toFixed(2)}`
+         }
+         const BoneMassCalculation=()=>{
+              const BoneMassValue=LBM_Value-MuscleMass_Value
+              BoneMass.innerText=`${BoneMassValue.toFixed(2)}`
          }
 
           
