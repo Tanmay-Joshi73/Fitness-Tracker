@@ -1,183 +1,173 @@
-/*
-        //My Css 
-    body {
-        background-image: url("/Images/Background.jpeg");
-        background-size: cover;
-        /* background-position: center; */
-        /* background-repeat: no-repeat; */
-      
-/* } */
-/* header h1{ */
-        /* text-align: center;
-        margin-top:40px;
-        font-size: 45px;
-}
-.input-info{
-        /* border: 2px solid black; */
-        /* width: 50vw;
-        height: 30vh;
-        margin-left: 25%; */
-        /* margin-top: 1%; */
-/* } */
-/* .firstBox{ */
-    /* display: block; */
-/* } */ 
-/* .firstBox input ,label{
-    margin-left: 35px;
-    margin-top: 20px;
-}
-.secondBox{
-    margin-top: 20px;
-    display: block;
-}
-.secondBox input,label{
-    margin-left: 30px;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* .MiddleBorder{ */
-    /* width: 100%;
-    height: 40px;
-    background-color: #1c3f3A;
-    opacity: .9;
-}
-
-#Calculate-BTN{
-    height: 40px;
-    margin-left: 45%;
-    width: 190px;
-    background-color: #1c3f3A;
-    border-radius:20px; */
-/* }
-.FinalBorder{
-    width: 100%;
-    height: 40px;
-    background-color: #1c3f3A;
-} */
-
-
-/* Reset default styles */
-
-
-
-
-
-
-  /* Chat Gpt code */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  align-items: center;
+  text-align: center;
+  background-image: url(ft_bg.jpeg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
 
+header {
+  margin: 20px 0 0;
+}
 
+.input-info input {
+  border: none;
+  outline: none;
+  background-color: #ECE8DA;
+  border-bottom: 1px solid;
+  padding: 2px 13px;
+  text-align: center;
+}
 
- 
-  /* Set body background and font styles */
-  body {
-    
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
+input[type="number"] {
+  width: 100px;
+}
+
+.zerothBox {
+  margin: 20px 0 0;
+}
+
+.firstBox {
+  width: 700px;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.secondBox {
+  width: 700px;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0 0;
+}
+
+.MiddleBorder, .FinalBorder {
+  border-radius: 200%;
+  width: 100%;
+  height: 45px;
+  margin: 20px 0 0;
+  background-color: #1c3f3ac5;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  text-align: center;
+  padding: 6px 10px;
+  border-radius: 10px;
+  outline: none;
+  border: 9px solid #ECE8DA;
+  cursor: pointer;
+  background-color: #1c3f3a80;
+  color: #ECE8DA;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  border: 8px solid #1c3f3a00;
+}
+
+.MainPage {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row1, .row2, .row3 {
+  margin: 30px 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dots {
+  display: flex;
+}
+
+.green, .yellow, .red {
+  display: flex;
+  margin: 20px 15px;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.green .dot {
+  background-color: lime;
+}
+
+.yellow .dot {
+  background-color: darkorange;
+}
+
+.red .dot {
+  background-color: red;
+}
+
+footer {
+  width: 100%;
+  font-size: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-bottom: 8px;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .firstBox, .secondBox {
+    flex-direction: column;
+    width: auto;
   }
-  
-  /* Header styles */
-  header {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
+
+  input[type="number"] {
+    width: 200px;
   }
-  
-  h1 {
-    color: black;
-    font-size: 28px;
-    margin: 0;
+}
+
+@media (max-width: 576px) {
+  .firstBox, .secondBox {
+    flex-direction: column;
+    width: auto;
   }
-  
-  /* Input container styles */
-  .input-info {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
+
+  input[type="number"] {
+    width: 250px;
   }
-  
-  .firstBox,
-  .secondBox {
-    flex-basis: 45%;
+
+  .row1, .row2, .row3 {
+    flex-direction: column;
   }
-  
-  /* Input label styles */
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+
+  .green, .yellow, .red {
+    flex-direction: column;
   }
-  
-  /* Input field styles */
-  input[type="number"],
-  input[type="radio"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 10px;
+
+  footer{
+    font-size: 5px;
+    margin-bottom: 3px;
   }
-  
-  /* Middle border styles */
-  .MiddleBorder {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Calculate button styles */
-  #Calculate-BTN {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  #Calculate-BTN:hover {
-    background-color: #555;
-  }
-  
-  /* Main page styles */
-  .MainPage {
-    text-align: center;
-    margin: 0 20px;
-  }
-  
-  .MainPage h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .MainPage span {
-    font-weight: bold;
-  }
-  
-  /* Final border styles */
-  .FinalBorder {
-    border-top: 2px solid #ccc;
-    margin-bottom: 20px;
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-  }
-  
-  p {
-    color: #fff;
-    font-size: 12px;
-    margin: 0;
-  }
-  
+}
