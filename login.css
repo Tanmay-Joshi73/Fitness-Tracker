@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+*{
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url(ft_bg.jpeg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    
+}
+
+.wrapper{
+    width:fit-content;
+    height:fit-content;
+    background:#87968D;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    padding:30px 80px ;
+    border-radius: 5%;
+    box-shadow: 20px 20px 50px rgba(30, 33, 58, 0.4);
+    margin: 0;
+    /* font-weight: bold; */
+}
+
+/* .logo{
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: calc(0% - 0px);
+} */
+
+.wrapper form{
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* .user{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+} */
+
+h1{
+    color: #ECE8DA;
+    margin: 0;
+    padding: 0 0 35px;
+    text-align: center;
+}
+
+.wrapper input{
+    width: 100%;
+}
+
+.wrapper input[type="text"], input[type="password"]{
+    border: none;
+    margin: 8 0 40 0;
+    border-bottom: 1px solid #ECE8DA;
+    background-color: #87968D;
+    outline:none;
+    height: 30px;
+    color: #ECE8DA;
+    font-size: 16 ;
+    /* font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+}
+
+.wrapper input[type="submit"]{
+    color: #ECE8DA;
+    border: none;
+    outline: none;
+    height: 35px;
+    background-color: #516A63;
+    margin: 0 0 25 0;
+    font-size: 16px;
+    border-radius:20px ;
+}
+
+.wrapper input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #0d513e;
+    
+}
+
+.wrapper a{
+    text-decoration: none;
+    font-size: 12px;
+    margin-left: 6px;
+    /* line-height: 20px; */
+    color:#364b45;
+}
+
+.wrapper a:hover{
+    color: #0d513e;
+    text-decoration: underline;
+}
+
+form .txt_feild{
+    position: relative;
+    /* border-bottom: 2px solid #adadad; */
+    /* margin: 30px 0; */
+}
+
+.txt_feild label{
+    position: absolute;
+    top: 30%;
+    left: 5px;
+    color: #ECE8DA;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_feild span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    transition: .5s;
+}
+
+.txt_feild input:focus ~ label,
+.txt_feild input:valid ~ label{
+    top: -5px;
+}
+
+.txt_feild input:focus ~ span::before,
+.txt_feild input:valid ~ span::before{
+    width: 100%;
+}
+
+.register{
+    color: #ECE8DA;
+    font-size: 12px ;
+}
