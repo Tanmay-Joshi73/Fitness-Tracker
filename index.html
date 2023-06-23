@@ -8,7 +8,7 @@
 <body>
     <div class="wrapper">
         <h1>Login Here</h1>
-        <form method="post">
+        <form method="get" action="Home.html">
             <div class="txt_feild">
                 <!-- <p>Username</p> -->
                 <input type="text" required>
@@ -18,7 +18,7 @@
 
             <div class="txt_feild">
                 <!-- <p>Password</p> -->
-                <input type="password" required>
+                <input type="password" id="Pwd" required  pattern=".{8,}">
                 <span></span>
                 <label>Password</label>
             </div>
