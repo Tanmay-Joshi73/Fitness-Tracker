@@ -61,11 +61,11 @@ const Calculate =  () => {
              const height = (parseFloat(HeightValue.value)/100); // height in meters
         
               BMI = weight / (height * height);
-                if(!isNaN(BMI))  BMI_Value.innerText=`${BMI.toFixed(2)}`
-
-                
-
-            
+                if(!isNaN(BMI))  BMI_Value.innerText=`${BMI.toFixed(1)}`
+                if(BMI<18.5) BMI_Value.style.color='orange'
+                else if(BMI>=18.5 && BMI<=24.9) BMI_Value.style.color='green'
+                else if(BMI>=25 && BMI<=29.9) BMI_Value.style.color='orange'
+                else BMI_Value.style.color='red'
     }
         
 
@@ -77,35 +77,86 @@ const Calculate =  () => {
             //At reserach Paper Value Assined for a men =0  but if we use men =0 calculation goes wrong
                 // const GenderMale=1
              if (Gender === 0) {
-            bodyFat = -44.988 + (0.503 * age) + (10.689 * 1) + (3.172 * bmi) - (0.026 * (bmi * bmi)) + (0.181 * bmi * 1) - (0.02 * bmi * age) - (0.005 * (bmi * bmi) * 1) + (0.00021 * (bmi * bmi) * age);           
+              bodyFat=(1.39*bmi)+(0.16*age)-(10.34*1)-9
+                if(bodyFat>=2 && bodyFat<=5) BodyFatValue.style.color='orange'
+                else if(bodyFat>=6 && bodyFat<=13) BodyFatValue.style.color='green'
+                else if(bodyFat>=14 && bodyFat<=17) BodyFatValue.style.color='green'
+                else if(bodyFat>=18 && bodyFat<=24) BodyFatValue.style.color='orange'
+                else BodyFatValue.style.color='red'
+                
+
              }
+             
+            
              else{
-                bodyFat = -44.988 + (0.503 * age) + (10.689 * 0) + (3.172 * bmi) - (0.026 * (bmi * bmi)) + (0.181 * bmi * 0) - (0.02 * bmi * age) - (0.005 * (bmi * bmi) * 0) + (0.00021 * (bmi * bmi) * age);           
+              bodyFat=(1.39*bmi)+(0.16*age)-(10.34*0)-9
+              if(bodyFat>=10 && bodyFat<=13) BodyFatValue.style.color='orange'
+                else if(bodyFat>=14 && bodyFat<=20) BodyFatValue.style.color='green'
+                else if(bodyFat>=21 && bodyFat<=24) BodyFatValue.style.color='green'
+                else if(bodyFat>=25 && bodyFat<=31) BodyFatValue.style.color='orange'
+                else BodyFatValue.style.color='red'
+             
              }
-            BodyFatValue.innerText=`${bodyFat.toFixed(2)}`   
+            BodyFatValue.innerText=`${bodyFat.toFixed(1)}`   
      }
-    }
+        }
 
 
          const LBM=()=>{
-            // const LeanBodyMass_Value=value*WeightValue.value+value1*HeightValue.value-value2
+            const LeanBodyMass_Value=value*WeightValue.value+value1*HeightValue.value-value2
+            
             // console.log(LeanBodyMass_Value)
-            if (Gender === 0) {
-                LBM_Value = (0.407 * WeightValue.value) + (0.267 * HeightValue.value) - 19.2;
-              } else if (Gender === 1) {
-                LBM_Value = (0.252 * WeightValue.value) + (0.473 * HeightValue.value) - 48.3;
-              }
+            console.log(WeightValue.value)
+            console.log(HeightValue.value)
+           LBM_Value=WeightValue.value - (WeightValue.value * (bodyFat/100))
+           let range=((WeightValue.value-LBM_Value)/WeightValue.value)*100
               LeanBodyMass.innerText=`${LBM_Value.toFixed(2)}`
+
+              if(Gender===0){
+
+                  if(range>=2 && range<=5) LeanBodyMass.style.color='orange'
+                  else if(range>=6 && range<=13) LeanBodyMass.style.color='green'
+                  else if(range>=14 && range<=17) LeanBodyMass.style.color='green'
+                  else if(range>=18 && range<=24) LeanBodyMass.style.color='orange'
+                  else LeanBodyMass.style.color='red'
+                }
+
+              else if(Gender===1){
+
+                  if(range>=10 && range<=13) LeanBodyMass.style.color='orange'
+                  else if(range>=14 && range<=20) LeanBodyMass.style.color='green'
+                  else if(range>=21 && range<=24) LeanBodyMass.style.color='green'
+                  else if(range>=25 && range<=31) LeanBodyMass.style.color='orange'
+                  else LeanBodyMass.style.color='red'
+
      }
+
+    }
 
 
          const BodyWater=()=>{
+            let range
             if (Gender === 0) {
                BF=2.447 - 0.09156 * age +0.1074 *HeightValue.value + 0.3362* WeightValue.value
+               
+               range=(BF/WeightValue.value)*100
+               BodyWaterValue.innerText=`${BF.toFixed(2)}`
+               
+                if(range<50) BodyWaterValue.style.color='red'
+                else if(range>=50 && range<=65) BodyWaterValue.style.color='green'
+                else BodyWater.style.color='red'
+
               } else if (Gender === 1) {
                BF=-2.097 +0.1069 *HeightValue.value +0.2466 * WeightValue.value
+
+               range=(BF/WeightValue.value)*100
+               BodyWaterValue.innerText=`${BF.toFixed(2)}`
+              
+                if(range<=45) BodyWaterValue.style.color='red'
+                else if(range>45 && range<=60) BodyWaterValue.style.color='red'
+                else BodyWaterValue.style.color='red'
               }
-              BodyWaterValue.innerText=`${BF.toFixed(2)}`
+              
      }
 
 
@@ -116,6 +167,8 @@ const Calculate =  () => {
                 BMR=447.593 + (9.247*WeightValue.value) + (3.098*HeightValue.value) - (4.330*age)
                }
                BMR_Value.innerText=`${BMR.toFixed(2)}`
+               if(BMR>=1000 && BMR<=2000) BMR_Value.style.color='green'
+               else BMR_Value.style.color='red'
         }
 
 
