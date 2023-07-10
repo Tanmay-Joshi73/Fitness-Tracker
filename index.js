@@ -9,14 +9,14 @@ const BoneMass=document.getElementById('BoneMass')
 const AgeValue=document.getElementById('Input_Box')
 const HeightValue=document.getElementById('HeightInput')
 const WeightValue=document.getElementById('WeightInput')
-let Gender
-let BMI
-let age
-let BF
-let BMR
-let LBM_Value
-let MuscleMass_Value
-let bodyFat
+let Gender=undefined
+let BMI=undefined
+let age=undefined
+let BF=undefined
+let BMR=undefined
+let LBM_Value=undefined
+let MuscleMass_Value=undefined
+let bodyFat=undefined
 // let value
 // let value1
 // let value2
@@ -41,17 +41,17 @@ const Calculate =  () => {
       value2 = 48.3;
     }
   
-    const functions = [
-        BMI_Calculation,
-        BodyFat,
-        LBM,
-        BodyWater,
-        BMRCalculation,
-        MuscleMassCalculation,
-        BoneMassCalculation
-      ];
     
-      functions.forEach((func) => func());
+        BMI_Calculation(),
+        BodyFat(),
+        LBM(),
+        BodyWater(),
+        BMRCalculation(),
+        MuscleMassCalculation(),
+        BoneMassCalculation()
+      
+    
+      // functions.forEach((func) => func());
     ;
   }; 
 
@@ -106,8 +106,8 @@ const Calculate =  () => {
             const LeanBodyMass_Value=value*WeightValue.value+value1*HeightValue.value-value2
             
             // console.log(LeanBodyMass_Value)
-            console.log(WeightValue.value)
-            console.log(HeightValue.value)
+            // console.log(WeightValue.value)
+            // console.log(HeightValue.value)
            LBM_Value=WeightValue.value - (WeightValue.value * (bodyFat/100))
            let range=((WeightValue.value-LBM_Value)/WeightValue.value)*100
               LeanBodyMass.innerText=`${LBM_Value.toFixed(2)}`
@@ -163,10 +163,14 @@ const Calculate =  () => {
         const BMRCalculation=()=>{
             if (Gender === 0) {
                BMR=88.362 + (13.397*WeightValue.value) + (4.799*HeightValue.value) - (5.677*age)
-               } else if (Gender === 1) {
-                BMR=447.593 + (9.247*WeightValue.value) + (3.098*HeightValue.value) - (4.330*age)
-               }
                BMR_Value.innerText=`${BMR.toFixed(2)}`
+               } else if (Gender === 1) {
+                
+                BMR=447.593 + (9.247*WeightValue.value) + (3.098*HeightValue.value) - (4.330*age)
+                BMR_Value.innerText=`${BMR.toFixed(2)}`
+              }
+               console.log(BMR)
+              //  BMR_Value.innerText=`${BMR.toFixed(2)}`
                if(BMR>=1000 && BMR<=2000) BMR_Value.style.color='green'
                else BMR_Value.style.color='red'
         }
@@ -181,10 +185,12 @@ const Calculate =  () => {
                 MuscleMass_Value= 0.567 * WeightValue.value - 0.037 * age + 0.046 * HeightValue.value + 6.1 * 0 - 1.91   
             }
                 MuscleMass.innerText=`${MuscleMass_Value.toFixed(2)}`
+                MuscleMass.style.color='green'
          }
          const BoneMassCalculation=()=>{
               const BoneMassValue=LBM_Value-MuscleMass_Value
               BoneMass.innerText=`${BoneMassValue.toFixed(2)}`
+              BoneMass.style.color='green'
          }
 
           
